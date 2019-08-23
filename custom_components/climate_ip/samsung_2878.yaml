@@ -5,8 +5,8 @@ device:
   connection:
     type: samsung_2878
     params: 
-      host: "__CLIMATE_IP_HOST__"
-      token: '__CLIMATE_IP_TOKEN__'
+      host: "192.168.1.32"
+      token: '96dd9a14-083e-424c-8cb3-70c0d00f4da6'
       connection_template: '<Request Type="AuthToken"><User Token="{{token}}" /></Request>'
       power_template: '{% if value != none %}{% for key, value in device_state.items() %}{% if key == "AC_FUN_POWER" %}{% if value == "Off" %}<Request Type="DeviceControl"><Control CommandID="AC_FUN_POWER" DUID="{{duid}}"><Attr ID="AC_FUN_POWER" Value="On" /></Control></Request>{% endif %}{% endif %}{% endfor %}{% endif %}'
   status:
