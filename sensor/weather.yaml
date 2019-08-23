@@ -1,0 +1,21 @@
+  - platform: yweather
+    forecast: 1
+    name: yw_day1
+    monitored_conditions:
+      - weather
+      - temp_min
+      - temp_max
+  - platform: yweather
+    forecast: 2
+    name: yw_day2
+    monitored_conditions:
+      - weather
+      - temp_min
+      - temp_max
+  - platform: yweather
+    forecast: 3
+    name: yw_day3
+    monitored_conditions:
+      - weather
+      - temp_min
+      - temp_max

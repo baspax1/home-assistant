@@ -1,0 +1,12 @@
+- action:
+  - data:
+      message: Someone is trying to hack you!!!
+    service: notify.alert_test
+  alias: Failed login attempt
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state != off }}'
+  id: '1511448766304'
+  trigger:
+  - entity_id: persistent_notification.httplogin
+    platform: state

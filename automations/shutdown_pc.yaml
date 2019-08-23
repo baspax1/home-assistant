@@ -1,0 +1,11 @@
+- id: '1563101193337'
+  alias: autoshutvasw
+  trigger:
+  - at: '16:50'
+    platform: time
+  condition: []
+  action:
+  - data:
+      addon: core_rpc_shutdown
+      input: Vasw-pc
+    service: hassio.addon_stdin

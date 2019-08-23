@@ -1,0 +1,12 @@
+  - name: alert_test
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    sender: baspax1@gmail.com
+    encryption: starttls
+    username: !secret alert_user
+    password: !secret alert_pass
+    recipient: 
+      - baspax1@hotmail.com
+    sender_name: Your Pi
+

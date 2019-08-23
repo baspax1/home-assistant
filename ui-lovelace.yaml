@@ -1,0 +1,188 @@
+{
+    "data": {
+        "config": {
+            "title": "Home",
+            "views": [
+                {
+                    "badges": [
+                        "sun.sun"
+                    ],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.date"
+                                },
+                                {
+                                    "entity": "sensor.time"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.restart_pi"
+                                },
+                                {
+                                    "entity": "input_boolean.shutdown_pi"
+                                },
+                                {
+                                    "entity": "input_boolean.restart_ha"
+                                }
+                            ],
+                            "theme": "Backend-selected",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "input_boolean.restart_ha",
+                            "hold_action": {
+                                "action": "none"
+                            },
+                            "icon_height": "55px",
+                            "show_icon": true,
+                            "show_name": true,
+                            "tap_action": {
+                                "action": "call-service",
+                                "service": "homeassistant.restart"
+                            },
+                            "theme": "Backend-selected",
+                            "type": "entity-button"
+                        },
+                        {
+                            "entity": "switch.wake_chris",
+                            "hold_action": {
+                                "action": "more-info"
+                            },
+                            "icon": "mdi:desktop-mac",
+                            "icon_height": "54px",
+                            "show_icon": true,
+                            "show_name": true,
+                            "tap_action": {
+                                "action": "toggle"
+                            },
+                            "type": "entity-button"
+                        },
+                        {
+                            "entity": "switch.wake_vasw",
+                            "hold_action": {
+                                "action": "more-info"
+                            },
+                            "icon": "mdi:desktop-mac",
+                            "icon_height": "54px",
+                            "show_icon": true,
+                            "show_name": true,
+                            "tap_action": {
+                                "action": "toggle"
+                            },
+                            "type": "entity-button"
+                        }
+                    ],
+                    "panel": false,
+                    "path": "default_view",
+                    "theme": "default",
+                    "title": "Home"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.cpu_temperature"
+                                },
+                                {
+                                    "entity": "sensor.gpu_temperature"
+                                },
+                                {
+                                    "entity": "sensor.disk_free_home"
+                                },
+                                {
+                                    "entity": "sensor.disk_use_percent_home"
+                                },
+                                {
+                                    "entity": "sensor.memory_free"
+                                },
+                                {
+                                    "entity": "sensor.memory_use"
+                                },
+                                {
+                                    "entity": "sensor.memory_use_percent"
+                                },
+                                {
+                                    "entity": "sensor.network_out_eth0"
+                                },
+                                {
+                                    "entity": "sensor.processor_use"
+                                },
+                                {
+                                    "entity": "sensor.network_in_eth0"
+                                },
+                                {
+                                    "entity": "sensor.ipv4_address_eth0"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "SYSTEM",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.last_boot"
+                                },
+                                {
+                                    "entity": "sensor.time_online"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.adguard_filtering"
+                                },
+                                {
+                                    "entity": "switch.adguard_protection"
+                                },
+                                {
+                                    "entity": "sensor.adguard_dns_queries_blocked"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "AdGuard",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.gpu_temperature",
+                                "sensor.cpu_temperature"
+                            ],
+                            "show": {
+                                "extrema": true,
+                                "icon": false
+                            },
+                            "title": "CPU Temp",
+                            "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                "sensor.speedtest_download",
+                                "sensor.speedtest_upload"
+                            ],
+                            "show": {
+                                "extrema": true,
+                                "icon": false
+                            },
+                            "title": "Internet Speed",
+                            "type": "history-graph"
+                        }
+                    ],
+                    "title": "PI"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

@@ -1,0 +1,7 @@
+  scan_interval:
+    hours: 2
+    minutes: 0
+  monitored_conditions:
+    - download
+    - upload
+    - ping

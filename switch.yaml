@@ -1,0 +1,22 @@
+
+  - platform: wake_on_lan
+    name: "Wake Chris"
+    mac_address: "D0-50-99-29-B9-65"
+    host: 192.168.1.20
+    turn_off:
+      service: hassio.addon_stdin
+      data:
+        addon: core_rpc_shutdown
+        input: Chris-pc
+
+
+
+  - platform: wake_on_lan
+    name: "Wake Vasw"
+    mac_address: "40-A8-F0-50-F5-76"
+    host: 192.168.1.21
+    turn_off:
+      service: hassio.addon_stdin
+      data:
+        addon: core_rpc_shutdown
+        input: Vasw-pc

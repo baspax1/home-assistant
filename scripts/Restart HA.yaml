@@ -1,0 +1,5 @@
+ test_notification:
+  alias: HA RESTART
+  sequence:
+  - data: {}
+    service: homeassistant.restart

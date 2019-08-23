@@ -1,0 +1,96 @@
+homeassistant:
+  name: Chris
+  # Location required to calculate the time the sun rises and sets
+   # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Time Zone
+  time_zone: Europe/Athens ## NEED TO CHANGE
+  # Customization file
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+  # # Providers
+  # auth_providers:
+  #   - type: trusted_networks
+
+# Enables the frontend
+frontend:
+  themes: !include themes.yaml
+# Enables configuration UI
+config:
+# HTTP Server
+http:
+  # trusted_networks:
+  #   - 192.168.0.100 # DEVICE 1
+  #   - 192.168.0.102 # Device 2
+  #   - 192.168.0.103 # Device 3
+# Updater
+updater:
+# Discover some devices automatically
+discovery:
+system_health:
+person:
+
+# View all events in a logbook
+logbook:
+
+logger:
+  default: info
+  logs:
+    homeassistant.components.device_tracker: critical
+    homeassistant.components.camera: critical
+    custom_components.my_integration: critical
+    
+# Enables a map showing the location of tracked devices
+map:
+recorder:
+history:
+
+# Track the Sun
+sun:
+cloud:
+
+zone:
+  - name: home
+    latitude: 36.423258
+    longitude: 28.209691
+    radius: 250
+    icon: mdi:home
+    
+media_player:
+  # Use the Python ADB implementation without authentication
+  
+  - platform: androidtv
+    name: Android TV
+    host: 192.168.1.104
+
+climate:  
+    - platform: climate_ip
+      config_file: ‘samsung_2878.yaml’
+      ip_address: ‘192.168.1.32’
+      token: ‘96dd9a14-083e-424c-8cb3-70c0d00f4da6‘
+      cert: ‘ac14k_m.pem’
+      mac: ‘bc:8c:cd:78:4b:e3‘
+      name: ‘salon ac‘
+      debug: true
+      
+      
+
+tts:
+  - platform: google_translate
+
+
+  
+automation: !include_dir_merge_list automations
+group: !include groups.yaml
+script: !include_dir_merge_named scripts
+switch: !include switch.yaml
+#input_boolean: !include input.yaml
+shell_command: !include_dir_merge_named shell_command
+sensor: !include_dir_merge_list sensor
+notify: !include notify.yaml
+speedtestdotnet: !include config/speedtestdotnet.yaml
+#climate: !include config/climate.yaml
+
+

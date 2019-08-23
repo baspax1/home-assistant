@@ -1,0 +1,15 @@
+'1563384149670':
+  alias: Air
+  sequence:
+  - data: {}
+    service: climate.turn_on
+'1563384396480':
+  alias: air
+  sequence:
+  - data: {}
+    service: climate.turn_on
+'1566245089854':
+  alias: New Script
+  sequence:
+  - data: {}
+    service: media_player.turn_off

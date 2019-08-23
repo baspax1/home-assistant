@@ -1,0 +1,21 @@
+- id: '1563101193337'
+  alias: New Automation
+  trigger:
+  - at: '13:45'
+    platform: time
+  condition: []
+  action:
+  - data:
+      addon: core_rpc_shutdown
+      input: Vasw-pc
+    service: hassio.addon_stdin
+- id: '1566422510017'
+  alias: ChrisAtHome
+  trigger: []
+  condition:
+  - condition: state
+    entity_id: device_tracker.s8_chris
+    state: 'state: ''home'''
+  action:
+  - service: notify.alert_test
+

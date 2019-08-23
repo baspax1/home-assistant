@@ -1,0 +1,5 @@
+ reboot_pi:
+    alias: Reboot the Pi
+    sequence:
+    - data: {}
+      service: shell_command.reboot_pi

@@ -1,0 +1,12 @@
+- action:
+  - data:
+      message: Your Pi is Hot!!!
+    service: notify.alert_test
+  alias: pi hight temp
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state != off }}'
+  id: '1511448766304'
+  trigger:
+  - entity_id: device_tracker.s8_chris
+    platform: state
