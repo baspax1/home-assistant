@@ -18,4 +18,24 @@
     state: 'state: ''home'''
   action:
   - service: notify.alert_test
-
+- id: '1566658419796'
+  alias: turnoffair
+  trigger: []
+  condition:
+  - after: '17:57'
+    before: '18:05'
+    condition: time
+  action:
+  - service: climate.turn_off
+- id: '1566659718730'
+  alias: auto
+  trigger:
+  - at: '18:20'
+    for: '5'
+    platform: time
+  condition: []
+  action:
+  - service: climate.turn_on
+  - data: {}
+    service: climate.set_temperature
+    temperature: 23

@@ -10,4 +10,4 @@
   - alias: ''
     data:
       message: Chris is away
-    service: notify.alert_test
+    service: notify.alert_email

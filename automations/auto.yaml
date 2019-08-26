@@ -1,0 +1,24 @@
+- id: 'Turn on bedroom_ac'
+  alias: Turn on bedroom_ac
+  trigger:
+  - at: '18:50'
+    platform: time
+  condition: []
+  action:
+  - service: climate.turn_on
+    entity_id: climate.bedroom_ac
+    
+  - service: climate.set_temperature
+    data:
+     entity_id: climate.bedroom_ac
+     temperature: 25
+     
+- id: 'Turn off bedroom_ac'
+  alias: Turn off bedroom_ac
+  trigger:
+  - at: '18:52'
+    platform: time
+  condition: []
+  action:
+  - service: climate.turn_off
+    entity_id: climate.bedroom_ac    

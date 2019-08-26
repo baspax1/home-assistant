@@ -1,4 +1,4 @@
-  - name: alert_test
+  - name: alert_email
     platform: smtp
     server: smtp.gmail.com
     port: 587

@@ -61,27 +61,28 @@ zone:
 media_player:
   # Use the Python ADB implementation without authentication
   
-  - platform: androidtv
-    name: Android TV
-    host: 192.168.1.104
+ # - platform: androidtv
+  #  name: Android TV
+  #  host: 192.168.1.104
 
 climate:  
     - platform: climate_ip
-      config_file: ‘samsung_2878.yaml’
-      ip_address: ‘192.168.1.32’
-      token: ‘96dd9a14-083e-424c-8cb3-70c0d00f4da6‘
-      cert: ‘ac14k_m.pem’
-      mac: ‘bc:8c:cd:78:4b:e3‘
-      name: ‘salon ac‘
+      config_file: 'samsung_2878.yaml'
+      ip_address: '192.168.1.32'
+      token: '96dd9a14-083e-424c-8cb3-70c0d00f4da6'
+      cert: 'ac14k_m.pem'
+      mac: 'bc:8c:cd:78:4b:e3'
+      name: 'Bedroom ac'
       debug: true
-      
-      
-
+ 
 tts:
   - platform: google_translate
 
+  # WhiteList files
+homeassistant:
+  whitelist_external_dirs:
+      - /config/
 
-  
 automation: !include_dir_merge_list automations
 group: !include groups.yaml
 script: !include_dir_merge_named scripts
@@ -91,6 +92,3 @@ shell_command: !include_dir_merge_named shell_command
 sensor: !include_dir_merge_list sensor
 notify: !include notify.yaml
 speedtestdotnet: !include config/speedtestdotnet.yaml
-#climate: !include config/climate.yaml
-
-

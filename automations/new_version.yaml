@@ -1,7 +1,7 @@
 - action:
   - data:
       message: Update for Home Assistant is available.
-    service: notify.alert_test
+    service: notify.alert_email
   alias: New Version
   condition: []
   id: '1511175488232'
